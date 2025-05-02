@@ -1,10 +1,22 @@
 from mcp.server.fastmcp import FastMCP
 import subprocess
 import re
+import os
 from typing import Optional, List
 
 # Create an MCP server
 mcp = FastMCP("Terminal Server")
+
+@mcp.resource("documentation://mcp-python-sdk/readme")
+def get_mcp_python_sdk_readme() -> str:
+    """Get the MCP Python SDK README documentation"""
+    readme_path = "/Users/vamsi_mbmax/Library/CloudStorage/OneDrive-Personal/01_vam_PROJECTS/LEARNING/proj_AI/dev_proj_AI/practise_ai_anthropic_mcp_learn/notes/mcp_python_sdk_readme.md"
+
+    try:
+        with open(readme_path, "r") as file:
+            return file.read()
+    except Exception as e:
+        return f"Error reading README file: {str(e)}"
 
 @mcp.tool()
 def run_terminal_command(command: str, shell: bool = True) -> dict:

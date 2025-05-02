@@ -1,5 +1,13 @@
 {
     "servers": {
-
+        "shell": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/Users/vamsi_mbmax/Library/CloudStorage/OneDrive-Personal/01_vam_PROJECTS/LEARNING/proj_AI/dev_proj_AI/practise_ai_anthropic_mcp_learn/shellserver",
+                "run",
+                "server.py"
+            ]
+        }
     }
 }
