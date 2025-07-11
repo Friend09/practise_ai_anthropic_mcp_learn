@@ -1,0 +1,17 @@
+graph TD
+    A[Start] --> B[Download/Extract Course Materials];
+    B --> C[Setup Python Virtual Environment];
+    C --> D[Install Python Dependencies];
+    D --> E[PostgreSQL Setup Optional];
+    E -- Yes --> F[Create Sample DB & Table];
+    E -- Yes --> H[Create .env file for PG Credentials];
+    E -- No --> I[Navigate to Module Instructions];
+    F --> H;
+    H --> I;
+    I --> J[Read Module Instructions];
+    J --> K[Run MCP Server in Terminal 1];
+    K --> L[Run MCP Client in Terminal 2];
+    L --> M[Observe Output & Learn];
+    M --> N[Continue to Next Module];
+    N -- Yes --> I;
+    N -- No --> O[End Course];
